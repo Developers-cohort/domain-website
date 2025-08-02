@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer's Cohort | Connect SRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+    section {
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    ul li {
+      padding: 0.3rem 0;
+    }
+    .quote {
+      font-style: italic;
+      color: #666;
+      margin-top: 1rem;
+    }
+    
+    /* Contact Section Styling */
+    .contact-section {
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    
+    .contact-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-form input {
+      padding: 12px 16px;
+      width: 100%;
+      max-width: 400px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .contact-form input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+    
+    .contact-form button {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 120px;
+    }
+    
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+    
+    .contact-form button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    
+    /* Success message styling */
+    .success-message {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error-message {
+      display: none;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border: 1px solid #f5c6cb;
+    }
+    
+    @media (min-width: 600px) {
+      .contact-form {
+        flex-direction: row;
+        justify-content: center;
+      }
+      
+      .contact-form input {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚀 Developer's Cohort</h1>
+    <p>Powered by Connect SRM — Real Projects. Real Growth.</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>
+      Welcome to <strong>Developer's Cohort (DC)</strong> — the project-first wing of <strong>Connect SRM</strong>!<br>
+      We build real-world, usable software and help each other grow with the mindset:
+    </p>
+    <p class="quote">"Iron sharpens iron."</p>
+    <br><br>
+    <h2>What We Do</h2>
+    <ul>
+      <li>🚧 Work on <strong>industry-style projects</strong></li>
+      <li>👨‍🏫 Encourage <strong>peer-driven mentorship</strong></li>
+      <li>🧠 Promote <strong>building over just learning</strong></li>
+    </ul>
+  </section>
+
+  <section class="contact-section">
+    <h2>Get In Touch</h2>
+    <p style="margin-bottom: 1.5rem; color: #666;">Join our community and stay updated with the latest projects and opportunities.</p>
+    <div class="contact-form">
+      <input type="email" id="emailInput" placeholder="Enter your email address" required />
+      <button onclick="submitEmail()" id="submitBtn">Submit</button>
+    </div>
+    <div id="successMessage" class="success-message">
+      ✅ Thank you! Your email has been successfully submitted.
+    </div>
+    <div id="errorMessage" class="error-message">
+      ❌ Please enter a valid email address.
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Developer's Cohort · 
+    <a href="https://github.com/Developers-cohort" target="_blank" style="color: #888; text-decoration: underline;">
+      Visit our GitHub
+    </a>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBAvIQtHs9isKU91-xfRee9pb6qwppCSQ4",
+      authDomain: "dc-website-79807.firebaseapp.com",
+      projectId: "dc-website-79807",
+      storageBucket: "dc-website-79807.appspot.com",
+      messagingSenderId: "538841887166",
+      appId: "1:538841887166:web:3e807068530c1247cf09ef",
+      measurementId: "G-W78DE5HS6P"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function submitEmail() {
+      const emailInput = document.getElementById('emailInput');
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      const email = emailInput.value.trim();
+
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      // Validate email
+      if (!email || !email.includes('@')) {
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      // Disable button during submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        await db.collection("contact_emails").add({
+          email: email,
+          timestamp: new Date()
+        });
+        
+        // Show success message
+        successMessage.style.display = 'block';
+        
+        // Clear the input field
+        emailInput.value = '';
+        
+      } catch (err) {
+        console.error("Error adding email: ", err);
+        errorMessage.textContent = '❌ Something went wrong. Please try again.';
+        errorMessage.style.display = 'block';
+      } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit';
+      }
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('emailInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        submitEmail();
+      }
+    });
+  </script>
+
+</body>
+</html>
