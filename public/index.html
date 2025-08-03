@@ -31,7 +31,7 @@
       color: #555;
     }
     section {
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto 2rem auto;
       background: #fff;
       padding: 2rem;
@@ -57,9 +57,9 @@
       margin-top: 1rem;
     }
     
-    /* Contact Section Styling */
+    /* Contact Section Styling */ 
     .contact-section {
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto 2rem auto;
       background: #fff;
       padding: 2rem;
@@ -87,7 +87,7 @@
       width: 100%;
       max-width: 400px;
       border: 2px solid #ddd;
-      border-radius: 8px;
+      border-radius: 15px;
       font-size: 1rem;
       transition: border-color 0.3s ease;
     }
@@ -102,7 +102,7 @@
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 15px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
@@ -125,9 +125,10 @@
       background-color: #d4edda;
       color: #155724;
       padding: 12px 16px;
-      border-radius: 8px;
+      border-radius: 15px;
       margin-top: 1rem;
       border: 1px solid #c3e6cb;
+      width: 380px;
     }
     
     .error-message {
@@ -135,9 +136,10 @@
       background-color: #f8d7da;
       color: #721c24;
       padding: 12px 16px;
-      border-radius: 8px;
+      border-radius: 15px;
       margin-top: 1rem;
       border: 1px solid #f5c6cb;
+      width: 380px;
     }
     
     @media (min-width: 600px) {
@@ -191,7 +193,7 @@
       <button onclick="submitEmail()" id="submitBtn">Submit</button>
     </div>
     <div id="successMessage" class="success-message">
-      ✅ Thank you! Your email has been successfully submitted.
+      ✅Your email has been submitted.
     </div>
     <div id="errorMessage" class="error-message">
       ❌ Please enter a valid email address.
@@ -242,7 +244,7 @@
 
       // Disable button during submission
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
+      submitBtn.textContent = '...';
 
       try {
         await db.collection("contact_emails").add({
@@ -254,7 +256,7 @@
         successMessage.style.display = 'block';
         
         // Clear the input field
-        emailInput.value = '';
+        emailInput.value = "";
         
       } catch (err) {
         console.error("Error adding email: ", err);
